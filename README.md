@@ -1,4 +1,6 @@
 # prog7lab4
+<img width="1919" height="970" alt="image" src="https://github.com/user-attachments/assets/018aa1e4-8c48-4f07-8f91-268fa21179dd" />
+
 <img width="1816" height="907" alt="image" src="https://github.com/user-attachments/assets/cb1ad430-8147-4465-ad2e-740429387138" />
 
 <img width="1854" height="766" alt="image" src="https://github.com/user-attachments/assets/c2138260-2b34-4fca-b0a1-43f1286895b1" />
