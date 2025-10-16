@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}Register | Polls{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-5">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title text-center mb-4">Register</h2>
+
+                <p class="text-center text-muted mb-4">
+                    Create a new account to start creating and voting on polls!
+                </p>
+
+                <form method="post" novalidate>
+                    {% csrf_token %}
+
+                    <div class="mb-3">
+                        <label for="id_username" class="form-label">Username</label>
+                        <input type="text" name="username" id="id_username" class="form-control" required maxlength="150" autocomplete="username">
+                        {% if form.username.errors %}
+                            <div class="text-danger small mt-1">{{ form.username.errors }}</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="id_email" class="form-label">Email</label>
+                        <input type="email" name="email" id="id_email" class="form-control" required autocomplete="email">
+                        {% if form.email.errors %}
+                            <div class="text-danger small mt-1">{{ form.email.errors }}</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="id_password1" class="form-label">Password</label>
+                        <input type="password" name="password1" id="id_password1" class="form-control" required autocomplete="new-password">
+                        {% if form.password1.errors %}
+                            <div class="text-danger small mt-1">{{ form.password1.errors }}</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="id_password2" class="form-label">Confirm Password</label>
+                        <input type="password" name="password2" id="id_password2" class="form-control" required autocomplete="new-password">
+                        {% if form.password2.errors %}
+                            <div class="text-danger small mt-1">{{ form.password2.errors }}</div>
+                        {% endif %}
+                    </div>
+
+                    <button type="submit" class="btn btn-success btn-lg w-100">
+                        ✅ Create Account
+                    </button>
+                </form>
+
+                <hr class="my-4">
+
+                <p class="text-center mb-0">
+                    Already have an account?
+                    <a href="{% url 'polls:login' %}">Login here</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="alert alert-info mt-4">
+            <strong>Important:</strong>
+            <p class="mb-0 mt-2">
+                After registration, you'll receive a confirmation email.
+                Click the link in the email to activate your account.
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
